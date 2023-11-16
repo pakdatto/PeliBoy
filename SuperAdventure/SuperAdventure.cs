@@ -119,17 +119,7 @@ namespace SuperAdventure
                             _player.AddItemToInventory(newLocation.QuestAvailableHere.RewardItem);
 
                             // Mark the quest as completed
-                            // Find the quest in the player's quest list
-                            foreach (PlayerQuest pq in _player.Quests)
-                            {
-                                if (pq.Details.ID == newLocation.QuestAvailableHere.ID)
-                                {
-                                    // Mark it as completed
-                                    pq.IsCompleted = true;
-
-                                    break;
-                                }
-                            }
+                            _player.MarkQuestCompleted(newLocation.QuestAvailableHere);
                         }
                     }
                 }

@@ -95,43 +95,6 @@ namespace SuperAdventure
                         // See if the player has all the items needed to complete the quest
                         bool playerHasAllItemsToCompleteQuest = _player.HasAllQuestCompletionItems(newLocation.QuestAvailableHere);
 
-                        foreach (QuestCompletionItem qci in newLocation.QuestAvailableHere.QuestCompletionItems)
-                        {
-                            bool foundItemInPlayersInventory = false;
-
-                            // Check each item in the player's inventory, to see if they have it, and enough of it
-                            foreach (InventoryItem ii in _player.Inventory)
-                            {
-                                // The player has this item in their inventory
-                                if (ii.Details.ID == qci.Details.ID)
-                                {
-                                    foundItemInPlayersInventory = true;
-
-                                    if (ii.Quantity < qci.Quantity)
-                                    {
-                                        // The player does not have enough of this item to complete the quest
-                                        playerHasAllItemsToCompleteQuest = false;
-
-                                        // There is no reason to continue checking for the other quest completion items
-                                        break;
-                                    }
-
-                                    // We found the item, so don't check the rest of the player's inventory
-                                    break;
-                                }
-                            }
-
-                            // If we didn't find the required item, set our variable and stop looking for other items
-                            if (!foundItemInPlayersInventory)
-                            {
-                                // The player does not have this item in their inventory
-                                playerHasAllItemsToCompleteQuest = false;
-
-                                // There is no reason to continue checking for the other quest completion items
-                                break;
-                            }
-                        }
-
                         // The player has all items required to complete the quest
                         if (playerHasAllItemsToCompleteQuest)
                         {

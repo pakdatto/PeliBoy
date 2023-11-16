@@ -181,6 +181,20 @@ namespace SuperAdventure
             }
 
             // Refresh player's inventory list
+            UpdateInventoryListInUI();
+
+            // Refresh player's quest list
+            UpdateQuestListInUI();
+
+            // Refresh player's weapons combobox
+            UpdateWeaponListInUI();
+
+            // Refresh player's potions combobox
+            UpdatePotionListInUI();
+        }
+
+        private void UpdateInventoryListInUI()
+        {
             dgvInventory.RowHeadersVisible = false;
 
             dgvInventory.ColumnCount = 2;
@@ -197,8 +211,10 @@ namespace SuperAdventure
                     dgvInventory.Rows.Add(new[] { inventoryItem.Details.Name, inventoryItem.Quantity.ToString() });
                 }
             }
+        }
 
-            // Refresh player's quest list
+        private void UpdateQuestListInUI()
+        {
             dgvQuests.RowHeadersVisible = false;
 
             dgvQuests.ColumnCount = 2;
@@ -212,8 +228,10 @@ namespace SuperAdventure
             {
                 dgvQuests.Rows.Add(new[] { playerQuest.Details.Name, playerQuest.IsCompleted.ToString() });
             }
+        }
 
-            // Refresh player's weapons combobox
+        private void UpdateWeaponListInUI()
+        {
             List<Weapon> weapons = new List<Weapon>();
 
             foreach (InventoryItem inventoryItem in _player.Inventory)
@@ -241,8 +259,10 @@ namespace SuperAdventure
 
                 cboWeapons.SelectedIndex = 0;
             }
+        }
 
-            // Refresh player's potions combobox
+        private void UpdatePotionListInUI()
+        {
             List<HealingPotion> healingPotions = new List<HealingPotion>();
 
             foreach (InventoryItem inventoryItem in _player.Inventory)

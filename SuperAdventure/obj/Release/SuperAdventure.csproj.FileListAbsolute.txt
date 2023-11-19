@@ -1,0 +1,13 @@
+C:\peli\SuperAdventure\SuperAdventure\bin\Release\SuperAdventure.exe.config
+C:\peli\SuperAdventure\SuperAdventure\bin\Release\SuperAdventure.exe
+C:\peli\SuperAdventure\SuperAdventure\bin\Release\SuperAdventure.pdb
+C:\peli\SuperAdventure\SuperAdventure\bin\Release\Engine.dll
+C:\peli\SuperAdventure\SuperAdventure\bin\Release\Engine.pdb
+C:\peli\SuperAdventure\SuperAdventure\obj\Release\SuperAdventure.csproj.AssemblyReference.cache
+C:\peli\SuperAdventure\SuperAdventure\obj\Release\SuperAdventure.Properties.Resources.resources
+C:\peli\SuperAdventure\SuperAdventure\obj\Release\SuperAdventure.SuperAdventure.resources
+C:\peli\SuperAdventure\SuperAdventure\obj\Release\SuperAdventure.csproj.GenerateResource.cache
+C:\peli\SuperAdventure\SuperAdventure\obj\Release\SuperAdventure.csproj.CoreCompileInputs.cache
+C:\peli\SuperAdventure\SuperAdventure\obj\Release\SuperAdventure.csproj.CopyComplete
+C:\peli\SuperAdventure\SuperAdventure\obj\Release\SuperAdventure.exe
+C:\peli\SuperAdventure\SuperAdventure\obj\Release\SuperAdventure.pdb

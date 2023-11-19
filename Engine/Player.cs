@@ -34,6 +34,7 @@ namespace Engine
                 // There is no required item for this location, so return "true"
                 return true;
             }
+
             // See if the player has the required item in their inventory
             return Inventory.Exists(ii => ii.Details.ID == location.ItemRequiredToEnter.ID);
         }
@@ -67,6 +68,7 @@ namespace Engine
                     return false;
                 }
             }
+
             // If we got here, then the player must have all the required items, and enough of them, to complete the quest.
             return true;
         }
@@ -76,6 +78,7 @@ namespace Engine
             foreach (QuestCompletionItem qci in quest.QuestCompletionItems)
             {
                 InventoryItem item = Inventory.SingleOrDefault(ii => ii.Details.ID == qci.Details.ID);
+
                 if (item != null)
                 {
                     // Subtract the quantity from the player's inventory that was needed to complete the quest
@@ -87,6 +90,7 @@ namespace Engine
         public void AddItemToInventory(Item itemToAdd)
         {
             InventoryItem item = Inventory.SingleOrDefault(ii => ii.Details.ID == itemToAdd.ID);
+
             if (item == null)
             {
                 // They didn't have the item, so add it to their inventory, with a quantity of 1
@@ -103,6 +107,7 @@ namespace Engine
         {
             // Find the quest in the player's quest list
             PlayerQuest playerQuest = Quests.SingleOrDefault(pq => pq.Details.ID == quest.ID);
+
             if (playerQuest != null)
             {
                 playerQuest.IsCompleted = true;
